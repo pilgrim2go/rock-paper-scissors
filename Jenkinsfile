@@ -9,16 +9,14 @@ pipeline {
   }
 
   stages {
-      when {
+    when {
         anyOf {
             branch 'master'
             branch "fix-*"
             branch "fix2-*"
 
             environment name: 'BUILD_ENV', value: 'prod'
-        }
-        
-
+        }        
     }
     stage('Hello') {
 
@@ -34,7 +32,7 @@ pipeline {
 
     }
 
-    stage('cat README') 
+    stage('cat README') {
 
       steps {
 
@@ -45,7 +43,6 @@ pipeline {
         '''
 
       }
-
     }
 
   }
