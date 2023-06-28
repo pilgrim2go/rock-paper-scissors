@@ -27,8 +27,14 @@ pipeline {
     stage('cat README') {
 
       when {
+        anyOf {
+            branch 'master'
+            branch "fix-*"
+            branch "fix2-*"
 
-        branch "fix-*"
+            environment name: 'BUILD_ENV', value: 'prod'
+        }
+        
 
       }
 
