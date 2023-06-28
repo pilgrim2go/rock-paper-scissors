@@ -7,17 +7,19 @@ pipeline {
     buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
 
   }
+  when {
+    anyOf {
+        branch 'master'
+        branch "fix-*"
+        branch "fix2-*"
 
-  stages {
-    when {
-        anyOf {
-            branch 'master'
-            branch "fix-*"
-            branch "fix2-*"
-
-            environment name: 'BUILD_ENV', value: 'prod'
-        }        
+        environment name: 'BUILD_ENV', value: 'prod'
     }
+    
+
+  }
+  stages {
+
     stage('Hello') {
 
       steps {
@@ -34,6 +36,8 @@ pipeline {
 
     stage('cat README') {
 
+
+
       steps {
 
         sh '''
@@ -43,6 +47,7 @@ pipeline {
         '''
 
       }
+
     }
 
   }
