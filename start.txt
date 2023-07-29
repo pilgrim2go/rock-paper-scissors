@@ -26,7 +26,7 @@ public class HelloWorld {
 // should trigger both jenkins
 // 3rd should trigger http://35.159.17.xx:8080/job/test-github-ci/
 // 4th use private repo
-// 5th
+// 5th 2
 // 6th
 // 7th
 // 8th
