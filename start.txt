@@ -27,3 +27,4 @@ public class HelloWorld {
 // 3rd should trigger http://35.159.17.xx:8080/job/test-github-ci/
 // 4th use private repo
 // 5th
+// 6th
