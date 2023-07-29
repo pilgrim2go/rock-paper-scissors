@@ -1,5 +1,6 @@
 package com.simple;
 
+
 import java.util.Scanner;
 
 
